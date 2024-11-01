@@ -11,7 +11,7 @@ VOUCH_CHANNEL_ID = int(os.getenv("VOUCH_LOG_CHANNEL_ID"))
 intents = disnake.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Database setup
+
 conn = sqlite3.connect("vouch_db.sqlite")
 cursor = conn.cursor()
 
@@ -61,6 +61,7 @@ async def vouch(inter, member: disnake.Member, vote_type: str, comment: str):
     )
 
 
+
 @bot.slash_command(description="View the reputation profile of a member")
 async def profile(inter, member: disnake.Member):
     cursor.execute("SELECT vote_type, comment FROM vouches WHERE target_id = ?", (member.id,))
@@ -74,7 +75,6 @@ async def profile(inter, member: disnake.Member):
     negative_votes = sum(1 for v in vouches if v[0] == "-")
     reputation_score = positive_votes - negative_votes
 
-    # Create an embed for the profile
     embed = disnake.Embed(
         title=f"Reputation Profile for {member.display_name}",
         color=disnake.Color.blue()
