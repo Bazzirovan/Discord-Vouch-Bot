@@ -10,7 +10,7 @@ A simple Discord bot built with Disnake that allows server members to vouch for 
   
 ## Prerequisites
 
-- Python 3.8+
+- Python 3.11+
 - [Disnake](https://docs.disnake.dev/en/latest/)
 - [Dotenv](https://pypi.org/project/python-dotenv/) for environment variables
 
@@ -23,8 +23,9 @@ A simple Discord bot built with Disnake that allows server members to vouch for 
     ```
 
 2. **Install required libraries**:
+    You can install the required libraries by using the `requirements.txt` file provided:
     ```bash
-    pip install disnake python-dotenv
+    pip install -r requirements.txt
     ```
 
 3. **Setup environment variables**:
@@ -69,6 +70,7 @@ Example:
 - **bot.py**: Main bot file containing commands and bot setup.
 - **vouch_db.sqlite**: SQLite database file used to store all vouches.
 - **.env**: Environment file holding sensitive information (like your bot token).
+- **requirements.txt**: File listing all required Python packages for the bot.
 
 ## Contributing
 
