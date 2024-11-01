@@ -1,1 +1,1 @@
-# Discord-Vouch0Bot
+# Discord-Vouch-Bot
